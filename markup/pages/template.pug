@@ -1,0 +1,30 @@
+block settings
+    -
+        var page = {
+            title: 'Default title'
+        };
+
+        var isHomepage = false;
+
+    //- include ../components/head/head
+
+doctype html
+html(lang="eng")
+
+    <head>
+        meta(charset="utf-8")
+        meta(http-equiv="x-ua-compatible" content="ie=edge")
+        title= page.title
+        meta(content="" name="description")
+        meta(content="" name="keywords")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
+        meta(content="telephone=no" name="format-detection")
+        link(rel="icon" type="image/x-icon" href="/favicon.ico")
+        link(href="%=static=%css/main%=hash=%%=min=%.css" rel="stylesheet" type="text/css")
+    </head>
+
+    body.page(class=(page.title === 'Главная страница' ? 'is-homepage' : '') )#body
+        block page-body 
+        
+
+    script(src='%=static=%js/main%=hash=%%=min=%.js')

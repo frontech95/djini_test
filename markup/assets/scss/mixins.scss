@@ -1,0 +1,19 @@
+// Mixins.
+
+@mixin nl {
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    list-style: none;
+    list-style-position: outside;
+}
+
+@mixin breakpoint($breakpoint, $mobileFirst: true) {
+    @if $mobileFirst == true {
+      @media (min-width: $breakpoint) { @content };
+    }
+    @else {
+      @media (max-width: $breakpoint - 1) { @content };
+    }
+}
+// You can add your own mixins here:
